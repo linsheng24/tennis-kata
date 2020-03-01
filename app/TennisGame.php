@@ -3,37 +3,21 @@ namespace App;
 
 class TennisGame
 {
+  private $p1_score = 0;
+  private $p2_score = 0;
 
-  public function getGameScore($p1_score, $p2_score)
+  public function set_scores($p1_score, $p2_score)
   {
- 
-    if ($p1_score == $p2_score) {
-
-      if ($p1_score >= 4) {
-        return 'Deuce';
-      }
-
-      return $this->getTextFromScore($p1_score) . '-All';
-    }
-
-    if ($p1_score >= 4 || $p2_score >= 4) {
-      $tmp = abs($p1_score - $p2_score);
-      $adv = $p1_score > $p2_score ? 'player1' : 'player2';
-      if ($tmp == 1) {
-        return 'Advantage ' . $adv;
-      }
-      
-      return 'Win for ' . $adv;
-    }
-
-    return $this->getTextFromScore($p1_score) . '-' . $this->getTextFromScore($p2_score);
-
+    $this->p1_score = $p1_score;
+    $this->p2_score = $p2_score;
   }
 
-  private function getTextFromScore($score)
+  public function getGameScore()
   {
-    $text = ['Love', 'Fifteen', 'Thirty', 'Forty'];
-    return $text[$score];
+    if($this->p1_score == 0 && $this->p2_score == 0) {
+      return 'Love-All';
+    }   
   }
+
 
 }
