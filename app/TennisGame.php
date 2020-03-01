@@ -14,13 +14,17 @@ class TennisGame
 
   public function getGameScore()
   {
-    if($this->p1_score == 0 && $this->p2_score == 0) {
+    if ($this->p1_score == 0 && $this->p2_score == 0) {
       return 'Love-All';
     }
 
-    if($this->p1_score == 0 && $this->p2_score == 1) {
+    if ($this->p1_score == 0 && $this->p2_score == 1) {
       return 'Love-Fifteen';
     }   
+
+    if ($this->p1_score ==1 && $this->p2_score == 2) {
+      return 'Fifteen-Thirty';
+    }
   }
 
 
