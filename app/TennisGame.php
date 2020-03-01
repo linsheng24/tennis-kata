@@ -33,21 +33,8 @@ class TennisGame
 
   private function getTextFromScore($score)
   {
-    switch ($score) {
-      case 0:
-        $result = 'Love';
-        break;
-      case 1:
-        $result = 'Fifteen';
-        break;
-      case 2:
-        $result = 'Thirty';
-        break;
-      case 3:
-        $result = 'Forty';
-        break;
-    }
-    return $result;
+    $text = ['Love', 'Fifteen', 'Thirty', 'Forty'];
+    return $text[$score];
   }
 
 }
