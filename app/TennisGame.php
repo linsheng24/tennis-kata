@@ -18,17 +18,27 @@ class TennisGame
       return 'Love-All';
     }
 
-    if ($this->p1_score == 0 && $this->p2_score == 1) {
-      return 'Love-Fifteen';
-    }   
+    return $this->getTextFromScore($this->p1_score) . '-' . $this->getTextFromScore($this->p2_score);
 
-    if ($this->p1_score ==1 && $this->p2_score == 2) {
-      return 'Fifteen-Thirty';
-    }
+  }
 
-    if ($this->p1_score == 3 && $this->p2_score == 2) {
-      return 'Forty-Thirty';
+  private function getTextFromScore($score)
+  {
+    switch ($score) {
+      case 0:
+        $result = 'Love';
+        break;
+      case 1:
+        $result = 'Fifteen';
+        break;
+      case 2:
+        $result = 'Thirty';
+        break;
+      case 3:
+        $result = 'Forty';
+        break;
     }
+    return $result;
   }
 
 
