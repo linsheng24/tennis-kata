@@ -9,10 +9,7 @@ class TennisGame
  
     if ($p1_score == $p2_score) {
 
-      if ($p1_score == 4) {
-        return 'Deuce';
-      }
-      if ($p1_score == 5) {
+      if ($p1_score >=4) {
         return 'Deuce';
       }
 
