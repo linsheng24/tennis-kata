@@ -15,22 +15,6 @@ class TennisGame
   public function getGameScore()
   {
 
-    if ($this->p2_score >= 4 && $this->p2_score - $this->p1_score == 1) {
-      return 'Advantage player2';
-    }
-
-    if ($this->p1_score >= 4 && $this->p1_score - $this->p2_score == 1) {
-      return 'Advantage player1';
-    }
-
-    if ($this->p1_score >= 4 && $this->p1_score - $this->p2_score >= 2) {
-      return 'Win for player1';
-    }
-
-    if ($this->p2_score >=4 && $this->p2_score - $this->p1_score >= 2) {
-      return 'Win for player2';
-    }
-
     if ($this->p1_score == $this->p2_score && $this->p1_score >= 4) {
       return 'Deuce';
     }
@@ -39,27 +23,26 @@ class TennisGame
       return $this->getTextFromScore($this->p1_score) . '-All';
     }
 
+    if ($this->p1_score >=4 || $this->p2_score>=4) {
+      $win = $this->p1_score > $this->p2_score ? 'player1' : 'player2';
+      if (abs($this->p1_score - $this->p2_score) >= 2) {
+        return 'Win for ' . $win;
+      }
+      
+      return 'Advantage ' . $win;
+      
+    }
+
     return $this->getTextFromScore($this->p1_score) . '-' . $this->getTextFromScore($this->p2_score);
     
   }
 
   private function getTextFromScore($score)
   {
-    switch ($score) {
-      case 0:
-        $result = 'Love';
-        break;
-      case 1:
-        $result = 'Fifteen';
-        break;
-      case 2:
-        $result = 'Thirty';
-        break;
-      case 3:
-        $result = 'Forty';
-        break;
-    }
-    return $result;
+
+    $text = ['Love', 'Fifteen', 'Thirty', 'Forty'];
+    return $text[$score];
+    
   }
 
 }
