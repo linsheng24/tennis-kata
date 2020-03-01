@@ -25,6 +25,10 @@ class TennisGame
     if ($this->p1_score ==1 && $this->p2_score == 2) {
       return 'Fifteen-Thirty';
     }
+
+    if ($this->p1_score == 3 && $this->p2_score == 2) {
+      return 'Forty-Thirty';
+    }
   }
 
 
