@@ -289,4 +289,3 @@ class TennisGameTest extends TestCase
     $this->assertEquals($expected, $actual);
   }
 }
-
