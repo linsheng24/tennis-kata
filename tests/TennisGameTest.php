@@ -35,5 +35,22 @@ class TennisGameTest extends TestCase
     //Assert
     $this->assertEquals($expected, $actual);
   }
+
+  /**
+   * @test
+   */
+  public function getGameScore_Give1vs0_ReturnFifteenLove()
+  {
+    //Arrange
+    $p1_score = 1;
+    $p2_score = 0;
+    
+    $expected = 'Fifteen-Love';
+    //Act
+    $actual = $this->game->getGameScore($p1_score, $p2_score);
+    
+    //Assert
+    $this->assertEquals($expected, $actual);
+  }
   
 }

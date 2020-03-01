@@ -9,6 +9,9 @@ class TennisGame
     if ($p1_score == 0 && $p2_score == 0) {
       return 'Love-All';
     }
+    if ($p1_score == 1 && $p2_score == 0) {
+      return 'Fifteen-Love';
+    }
   }
 
 }
