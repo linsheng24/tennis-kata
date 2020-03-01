@@ -18,7 +18,7 @@ class TennisGameTest extends TestCase
     parent::tearDown();
     $this->game = null;
   }
-  
+
   /**
    * @test
    */
@@ -35,5 +35,4 @@ class TennisGameTest extends TestCase
     //Assert
     $this->assertEquals($expected, $actual);
   }
-
 }
