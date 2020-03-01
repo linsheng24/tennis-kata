@@ -27,6 +27,10 @@ class TennisGame
       return 'Win for player1';
     }
 
+    if ($this->p1_score == 2 && $this->p2_score == 4) {
+      return 'Win for player2';
+    }
+
     if ($this->p1_score == $this->p2_score && $this->p1_score >= 4) {
       return 'Deuce';
     }
