@@ -17,6 +17,10 @@ class TennisGame
     if ($p1_score == 1 && $p2_score == 2) {
       return 'Fifteen-Thirty';
     }
+
+    if ($p1_score == 3 && $p2_score == 2) {
+      return 'Forty-Thirty';
+    }
   }
 
 }
