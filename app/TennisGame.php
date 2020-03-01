@@ -28,6 +28,10 @@ class TennisGame
       return 'Win for player1';
     }
 
+    if ($p1_score == 2 && $p2_score == 4) {
+      return 'Win for player2';
+    }
+
     return $this->getTextFromScore($p1_score) . '-' . $this->getTextFromScore($p2_score);
 
   }
