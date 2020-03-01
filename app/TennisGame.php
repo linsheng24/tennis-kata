@@ -23,7 +23,11 @@ class TennisGame
     if ($p1_score == 4 && $p2_score == 3) {
       return 'Advantage player1';
     }
-    
+
+    if ($p1_score == 5 && $p2_score == 4) {
+      return 'Advantage player1';
+    }
+
     return $this->getTextFromScore($p1_score) . '-' . $this->getTextFromScore($p2_score);
 
   }
