@@ -9,7 +9,7 @@ class TennisGame
  
     if ($p1_score == $p2_score) {
 
-      if ($p1_score >=4) {
+      if ($p1_score >= 4) {
         return 'Deuce';
       }
 
@@ -22,9 +22,8 @@ class TennisGame
       if ($tmp == 1) {
         return 'Advantage ' . $adv;
       }
-      if ($tmp >= 2) {
-        return 'Win for ' . $adv;
-      }
+      
+      return 'Win for ' . $adv;
     }
 
     return $this->getTextFromScore($p1_score) . '-' . $this->getTextFromScore($p2_score);
