@@ -243,7 +243,7 @@ class TennisGameTest extends TestCase
   /**
    * @test
    */
-  public function getGameScore_Give4vs2_ReruenWinForPlayer1()
+  public function getGameScore_Give4vs2_ReturnWinForPlayer1()
   {
     //Arrange
     $p1_score = 4;
@@ -260,7 +260,7 @@ class TennisGameTest extends TestCase
   /**
    * @test
    */
-  public function getGameScore_Give5vs2_ReruenWinForPlayer1()
+  public function getGameScore_Give5vs2_ReturnWinForPlayer1()
   {
     //Arrange
     $p1_score = 5;
