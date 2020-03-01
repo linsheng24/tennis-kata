@@ -20,11 +20,7 @@ class TennisGame
       return 'Advantage player2';
     }
 
-    if ($p1_score == 4 && $p2_score == 3) {
-      return 'Advantage player1';
-    }
-
-    if ($p1_score == 5 && $p2_score == 4) {
+    if ($p1_score >= 4 && $p1_score == $p2_score + 1) {
       return 'Advantage player1';
     }
 
