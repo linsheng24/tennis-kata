@@ -15,11 +15,7 @@ class TennisGame
   public function getGameScore()
   {
 
-    if ($this->p1_score == 3 && $this->p2_score == 4) {
-      return 'Advantage player2';
-    }
-
-    if ($this->p1_score == 4 && $this->p2_score == 5) {
+    if ($this->p2_score >= 4 && $this->p2_score - $this->p1_score == 1) {
       return 'Advantage player2';
     }
 
