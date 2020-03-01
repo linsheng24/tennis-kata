@@ -16,6 +16,10 @@ class TennisGame
   {
     if($this->p1_score == 0 && $this->p2_score == 0) {
       return 'Love-All';
+    }
+
+    if($this->p1_score == 0 && $this->p2_score == 1) {
+      return 'Love-Fifteen';
     }   
   }
 
