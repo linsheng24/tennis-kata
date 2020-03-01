@@ -27,12 +27,8 @@ class TennisGame
     if ($p1_score >= 4 && $p1_score - $p2_score >= 2) {
       return 'Win for player1';
     }
-
-    if ($p1_score == 2 && $p2_score == 4) {
-      return 'Win for player2';
-    }
-
-    if ($p1_score == 3 && $p2_score == 6) {
+    
+    if ($p2_score >=4 && $p2_score - $p1_score >= 2) {
       return 'Win for player2';
     }
 
