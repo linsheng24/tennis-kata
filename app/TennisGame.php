@@ -23,6 +23,14 @@ class TennisGame
       return 'Advantage player1';
     }
 
+    if ($this->p1_score == 4 && $this->p2_score == 2) {
+      return 'Win for player1';
+    }
+
+    if ($this->p1_score == 5 && $this->p2_score == 3) {
+      return 'Win for player1';
+    }
+
     if ($this->p1_score == $this->p2_score && $this->p1_score >= 4) {
       return 'Deuce';
     }
