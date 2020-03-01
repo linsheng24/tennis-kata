@@ -8,6 +8,11 @@ class TennisGame
   {
  
     if ($p1_score == $p2_score) {
+
+      if ($p1_score == 4) {
+        return 'Deuce';
+      }
+
       return $this->getTextFromScore($p1_score) . '-All';
     }
 
