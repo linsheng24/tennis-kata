@@ -14,20 +14,9 @@ class TennisGame
 
   public function getGameScore()
   {
-    if ($this->p1_score == 0 && $this->p2_score == 0) {
-      return 'Love-All';
-    }
-
-    if ($this->p1_score == 1 && $this->p2_score == 1) {
-      return 'Fifteen-All';
-    }
-
-    if ($this->p1_score == 2 && $this->p2_score == 2) {
-      return 'Thirty-All';
-    }
-
-    if ($this->p1_score == 3 && $this->p2_score == 3) {
-      return 'Forty-All';
+    
+    if ($this->p1_score == $this->p2_score) {
+      return $this->getTextFromScore($this->p1_score) . '-All';
     }
 
     return $this->getTextFromScore($this->p1_score) . '-' . $this->getTextFromScore($this->p2_score);
