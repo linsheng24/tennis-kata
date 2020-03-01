@@ -16,20 +16,15 @@ class TennisGame
       return $this->getTextFromScore($p1_score) . '-All';
     }
 
-    if ($p2_score >= 4 && $p2_score == $p1_score + 1) {
-      return 'Advantage player2';
-    }
-
-    if ($p1_score >= 4 && $p1_score == $p2_score + 1) {
-      return 'Advantage player1';
-    }
-
-    if ($p1_score >= 4 && $p1_score - $p2_score >= 2) {
-      return 'Win for player1';
-    }
-    
-    if ($p2_score >=4 && $p2_score - $p1_score >= 2) {
-      return 'Win for player2';
+    if ($p1_score >= 4 || $p2_score >= 4) {
+      $tmp = abs($p1_score - $p2_score);
+      $adv = $p1_score > $p2_score ? 'player1' : 'player2';
+      if ($tmp == 1) {
+        return 'Advantage ' . $adv;
+      }
+      if ($tmp >= 2) {
+        return 'Win for ' . $adv;
+      }
     }
 
     return $this->getTextFromScore($p1_score) . '-' . $this->getTextFromScore($p2_score);
